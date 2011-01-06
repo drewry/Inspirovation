@@ -5,4 +5,10 @@ class HomeController < ApplicationController
       redirect_to :controller => "ideas"
     end
   end
+  
+  def coming_soon
+    respond_to do |format|
+      format.html # coming_soon.html.erb
+    end
+  end
 end

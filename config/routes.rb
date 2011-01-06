@@ -69,5 +69,8 @@ Inspirovation::Application.routes.draw do
   
   match 'subideas/new/:extra' => 'subideas#new'
   match 'subideas/new/:extra/:parent_id' => 'subideas#new'
+  
+  match 'home/:action' => 'home#:action', :as => 'home'
+  
   root :to => "home#index"
 end
