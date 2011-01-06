@@ -65,11 +65,10 @@ module IdeasHelper
         case dir
         when "e"
           side = Integer(w) + 1
-          map[Integer(side)][Integer(h)] = '<a href="/subideas/new/2' + String(side) + String(h) + 'e' + String(idea_id) + '/' + String(si.id) + '"><img src="/images/map_ico_SaddE.png" title="New Small Idea" /></a>'
         when "w"
-          side = Integer(w) - 1
-          map[Integer(side)][Integer(h)] = '<a href="/subideas/new/2' + String(side) + String(h) + 'w' + String(idea_id) + '/' + String(si.id) + '"><img src="/images/map_ico_SaddW.png" title="New Small Idea" /></a>'
+          side = Integer(w) - 1          
         end
+        map[Integer(side)][Integer(h)] = '<a href="/subideas/new/2' + String(side) + String(h) + String(dir) + String(idea_id) + '/' + String(si.id) + '"><img src="/images/map_ico_Sadd' + String(dir) + '.png" title="New Small Idea" /></a>'
         
         # create the submain idea icon
         map[Integer(w)][Integer(h)] = '<a href="/subideas/' + String(si.id) + '"><img src="/images/map_ico_submain.png" /></a>'
