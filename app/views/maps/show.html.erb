@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cellw:</b>
+  <%= @map.cellw %>
+</p>
+
+<p>
+  <b>Cellh:</b>
+  <%= @map.cellh %>
+</p>
+
+<p>
+  <b>Dir:</b>
+  <%= @map.dir %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @map.ico_type %>
+</p>
+
+<p>
+  <b>Subidea:</b>
+  <%= @map.subidea_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>

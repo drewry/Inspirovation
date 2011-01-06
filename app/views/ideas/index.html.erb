@@ -1,0 +1,18 @@
+<!-- begin ideas -->
+  <div id="ideas">
+    <% @ideas.each do |idea| %>
+      
+      <!-- begin idea -->
+        <div id="idea">
+          <div class="inner">      
+            <h2><%= link_to idea.title, idea %></h2>
+            <p class="statement"><%= idea.statement %></p>
+            <p>By <%= idea.user.email %></p>
+            <%= link_to 'View More', idea %>
+          </div>
+        </div>  
+      <!-- end idea -->
+      
+    <% end %>
+  </div>
+<!-- end ideas -->

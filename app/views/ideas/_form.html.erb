@@ -1,0 +1,56 @@
+<div id="f_idea">
+  <%= form_for(@idea) do |f| %>
+    <% if @idea.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+  
+        <ul>
+        <% @idea.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label 'What\'s its name?' %><br />
+      <p>Create a name for your idea, something short but sweet.</p>
+      <%= 
+      if @idea.title == nil
+        title = 'My First Idea'
+      else
+        title = @idea.title
+      end
+      f.text_field :title, :id => 'idea_title', :value => title 
+      %>
+    </div>
+    <div class="field">
+      <%= f.label 'Why is this useful?' %><br />
+      <p>Describe in less than 120 characters why this is useful.</p>
+      <%= 
+      if @idea.statement == nil
+        statement = 'My idea is useful because it is a new way to...'
+      else
+        statement = @idea.statement
+      end
+      f.text_area :statement, :id => 'idea_statement', :value => statement 
+      %>
+    </div>
+    <div class="field">
+      <%= f.label 'How does it work?' %><br />
+      <p>Briefly describe how your idea works, nothing too complicated.</p>
+      <%= 
+      if @idea.summary == nil
+        summary = 'It is actually rather simple how my idea works, you see you just...'
+      else
+        summary = @idea.summary
+      end
+      f.text_area :summary, :id => 'idea_summary', :value => summary
+      %>
+    </div>
+    <div class="clear"></div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

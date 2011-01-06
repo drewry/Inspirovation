@@ -1,0 +1,11 @@
+<div id="f_ideas">
+  <% 
+  p = params[:extra]
+  idea_id = p[4,255]
+  %>
+  <%= link_to 'Return to idea', idea_path(idea_id) %>
+  
+  <h1>Add a new sub-idea</h1>
+  
+  <%= render 'form' %>
+</div>

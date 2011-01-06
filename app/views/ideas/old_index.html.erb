@@ -1,0 +1,27 @@
+<h1>Listing ideas</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Statement</th>
+    <th>Summary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+    <td><%= idea.title %></td>
+    <td><%= idea.statement %></td>
+    <td><%= idea.summary %></td>
+    <td><%= link_to 'Show', idea %></td>
+    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <td><%= link_to 'Destroy', idea, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Idea', new_idea_path %>

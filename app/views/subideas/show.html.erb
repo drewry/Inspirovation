@@ -1,0 +1,23 @@
+<div id="big_idea">
+  <div class="actions">
+    <%= link_to 'Return to Main Idea', @subidea.idea %>
+  </div>
+  <div class="articles">  
+    <div id="idea_map">
+      <%= build_idea_map(@subidea.idea.id) %>
+    </div>   
+    <div id="idea_info"> 
+      <h1><%= link_to @subidea.idea.title, @subidea.idea %></h1>
+      <h2><%= @subidea.title %></h2>
+      <p><%= @subidea.summary %></p>
+      <div class="actions" style="float: right">
+        <% if current_user.id == @subidea.idea.user.id %>
+          <%= link_to 'Edit', edit_subidea_path(@subidea) %> |
+          <%= link_to 'Delete', @subidea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete %>
+        <% end %>
+      </div>
+    </div>
+  
+    <div class="clear"></div>
+  </div>
+</div>

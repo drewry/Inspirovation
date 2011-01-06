@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cellw: MyString
+  cellh: MyString
+  dir: 
+  type: 1
+  subidea_id: 1
+
+two:
+  cellw: MyString
+  cellh: MyString
+  dir: 
+  type: 1
+  subidea_id: 1

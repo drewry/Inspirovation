@@ -1,0 +1,29 @@
+<h1>Listing subideas</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Summary</th>
+    <th>Idea</th>
+    <th>Parent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subideas.each do |subidea| %>
+  <tr>
+    <td><%= subidea.title %></td>
+    <td><%= subidea.summary %></td>
+    <td><%= subidea.idea_id %></td>
+    <td><%= subidea.parent_id %></td>
+    <td><%= link_to 'Show', subidea %></td>
+    <td><%= link_to 'Edit', edit_subidea_path(subidea) %></td>
+    <td><%= link_to 'Destroy', subidea, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subidea', new_subidea_path %>

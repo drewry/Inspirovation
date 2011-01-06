@@ -1,0 +1,26 @@
+<div id="big_idea">
+  <div class="actions">
+    <%= link_to 'Return to Ideas', ideas_path %>
+  </div>
+  <div class="articles">
+    <div id="idea_map">
+      <%= build_idea_map(@idea.id) %>
+    </div> 
+    
+    <div id="idea_info"> 
+      <h1><%= @idea.title %></h1>
+      <h2>Why is it useful?</h2>
+      <p><%= @idea.statement %></p>
+      <h2>How does it work?</h2>
+      <p><%= @idea.summary %></p>
+      <div class="actions" style="float: right">
+        <% if current_user.id == @idea.user.id %>
+          <%= link_to 'Edit', edit_idea_path(@idea) %> |
+          <%= link_to 'Delete', @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete %>
+        <% end %>
+      </div>
+    </div>
+  
+    <div class="clear"></div>
+  </div>
+</div>
