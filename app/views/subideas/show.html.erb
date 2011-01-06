@@ -12,8 +12,15 @@
       <p><%= @subidea.summary %></p>
       <div class="actions" style="float: right">
         <% if current_user.id == @subidea.idea.user.id %>
-          <%= link_to 'Edit', edit_subidea_path(@subidea) %> |
-          <%= link_to 'Delete', @subidea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete %>
+          
+          <%= link_to edit_subidea_path(@subidea) do  %> 
+            <img src='/images/ico_edit.png' />
+          <% end %>
+          
+          <%= link_to @subidea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete do  %> 
+            <img src='/images/ico_delete.png' />
+          <% end %>
+          
         <% end %>
       </div>
     </div>

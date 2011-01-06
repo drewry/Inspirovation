@@ -49,10 +49,21 @@
                 </div>
                 <div id="icons">
                   <% if user_signed_in? %>
-                    <%= link_to "Settings", edit_user_registration_path  %> |
-                    <%= link_to "Logout", destroy_user_session_path %>
+                    <%= link_to edit_user_registration_path do  %> 
+                      <img src='/images/ico_settings.png' /> Settings
+                    <% end %>
+                    |
+                    <%= link_to destroy_user_session_path do  %> 
+                      <img src='/images/ico_unlock.png' /> Logout
+                    <% end %>
                   <% else %>
-                    <%= link_to "Login", new_user_session_path %> | <%= link_to "Sign Up", new_user_registration_path  %>
+                    <%= link_to new_user_session_path do  %> 
+                      <img src='/images/ico_lock.png' /> Login
+                    <% end %>
+                    | 
+                    <%= link_to new_user_registration_path do  %> 
+                      <img src='/images/ico_register.png' /> Sign Up
+                    <% end %>
                   <% end %>
                 </div>
                 <div class="clear"></div>
@@ -83,6 +94,10 @@
         <!-- Begin Footer -->
         <div class="clear"></div>
         <div id="footer">
+          <div class="icons">
+            <a href="http://twitter.com/drewry" target="_blank"><img src="/images/twitter_32.png"></a>
+            <a href="mailto: dhmorris@gmail.com" target="_blank"><img src="/images/email_32.png"></a>
+          </div>
           Inspirovation &copy; 2010.  All Rights Reserved.
         </div>
         <!-- End Footer -->

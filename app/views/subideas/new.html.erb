@@ -6,6 +6,12 @@
   <%= link_to 'Return to idea', idea_path(idea_id) %>
   
   <h1>Add a new sub-idea</h1>
-  
-  <%= render 'form' %>
+  <%
+  idea = Idea.find(idea_id)
+  if current_user.id == idea.user.id
+  %>
+    <%= render 'form' %>
+  <% else %>
+    <p>Sorry, at this time you can only add sub-ideas to your own idea.  In the future you will be able to add suggestions to others' ideas.</p>
+  <% end %>
 </div>

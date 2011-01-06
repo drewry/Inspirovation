@@ -79,6 +79,20 @@ a:hover {
 		margin: 8px 5px 0px 0px;
 		color: #fff;
 	}
+	   #dashboard #icons a {
+	     color: #fff;
+	     position: relative;
+	     top: -27px;
+	     opacity: 0.8;
+	   }
+	     #dashboard #icons a img {
+	       position: relative;
+	       top: 12px;
+	     }
+	   #dashboard #icons a:hover {
+	     color: #ccc;
+	     opacity: 1.0;
+	   }
 	#dashboard #actions {
 		float: left;
 		font-size: 22px;
@@ -191,8 +205,19 @@ a:hover {
 	background: #fff;
 	padding: 10px;
 	z-index: 3;
-	opacity: 0.6;
+	opacity: 0.8;
 }
+  #footer .icons {
+    text-align: right;
+    margin: 5px 0px 5px 0px;
+  }
+  #footer .icons a {
+    opacity: 0.5;
+    margin: 5px;
+  }
+  #footer .icons a:hover {
+    opacity: 1.0;
+  }
 
 /* Forms */
 #search {
@@ -318,6 +343,12 @@ a:hover {
   #big_idea .actions {
     padding: 15px 0px 15px 0px;
   }
+    #big_idea .actions a {
+      opacity: 0.5;
+    }
+    #big_idea .actions a:hover {
+      opacity: 1.0;
+    }
 
 #idea_info {
   float: left;

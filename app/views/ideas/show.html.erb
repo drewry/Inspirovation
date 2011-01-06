@@ -15,8 +15,15 @@
       <p><%= @idea.summary %></p>
       <div class="actions" style="float: right">
         <% if current_user.id == @idea.user.id %>
-          <%= link_to 'Edit', edit_idea_path(@idea) %> |
-          <%= link_to 'Delete', @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete %>
+          
+          <%= link_to edit_idea_path(@idea) do  %> 
+            <img src='/images/ico_edit.png' />
+          <% end %>
+          
+          <%= link_to @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete do  %> 
+            <img src='/images/ico_delete.png' />
+          <% end %>
+
         <% end %>
       </div>
     </div>
