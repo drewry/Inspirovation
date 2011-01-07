@@ -82,12 +82,22 @@ class FavoritesController < ApplicationController
   end
   
   # add it to my favorites
-  def add_my_favorite
+  def add_my_favorite    
     favorites = Favorite.where(:idea_id => params[:idea_id], :user_id => current_user.id)
     
+    go = true
+      
     # check if favorite exists
     if favorites.count > 0
-    else
+      go = false
+    end
+    
+    # check if this is the current user
+    if Idea.find(params[:idea_id]).user.id == current_user.id
+      go = false
+    end
+    
+    if go == true
       f = Favorite.new
       f.user_id = current_user.id
       f.idea_id = params[:idea_id]
