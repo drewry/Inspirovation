@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rating type:</b>
+  <%= @rating.rating_type %>
+</p>
+
+<p>
+  <b>Idea:</b>
+  <%= @rating.idea_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @rating.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', ratings_path %>

@@ -9,11 +9,40 @@ class IdeasController < ApplicationController
       format.xml  { render :xml => @ideas }
     end
   end
+  
+  # update view when page is loaded
+  def update_view (idea_id)
+    # check to only update view once a day
+    view = View.where(:user_id => current_user.id, :idea_id => idea_id).last
+        
+    go = false
+    
+    if view
+      created_at = view.created_at
+      time = Time.now
+      difference = time - created_at
+      
+      if difference > 86400
+        go = true
+      end
+    else
+      go = true
+    end    
+    
+    if go == true
+      view = View.new
+      view.idea_id = idea_id
+      view.user_id = current_user.id
+      view.save 
+    end
+    
+  end
 
   # GET /ideas/1
   # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
+    update_view(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

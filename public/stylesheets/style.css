@@ -357,6 +357,7 @@ a:hover {
   padding: 15px;
   color: #e7e5e2;
   line-height: 20px;
+  margin: 0px 25px 25px 0px;
 }
   #idea_info h1 {
     font-size: 34px;
@@ -382,6 +383,7 @@ a:hover {
 #idea_map {
   float: left;
   width: 365px;
+  margin: 0px 0px 25px 0px;
 }
   #idea_map a {
     opacity: 0.5;
@@ -407,6 +409,29 @@ a:hover {
       padding: 0px;
     }
 
+#idea_stats {
+  width: 100%;
+}
+  #idea_stats #left {
+    width: 130px;
+    padding: 0px 10px 0px 10px;
+  }
+  #idea_stats #right {
+    width: 130px;
+    padding: 0px 10px 0px 10px;
+  }
+  #idea_stats img {
+    padding: 0px 5px 0px 5px;
+    position: relative;
+    top: 3px;
+  }
+  #idea_stats a {
+    opacity: 0.7;
+  }
+  #idea_stats a:hover {
+    opacity: 1.0;
+  }
+
 #idea_questions {
   float: left;
   width: 312px;
@@ -414,7 +439,7 @@ a:hover {
   padding: 15px;
   color: #554103;
   line-height: 20px;
-  margin: 0px 0px 0px 25px;
+  margin: 0px 25px 25px 0px;
 }
   #idea_questions h1 {
     font-size: 34px;

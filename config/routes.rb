@@ -1,5 +1,11 @@
 Inspirovation::Application.routes.draw do
 
+  resources :favorites
+
+  resources :views
+
+  resources :ratings
+
   resources :questions
 
   resources :subideas
@@ -73,6 +79,11 @@ Inspirovation::Application.routes.draw do
   match 'subideas/new/:extra/:parent_id' => 'subideas#new'
   
   match 'questions/new/:idea_id' => 'questions#new', :as => 'new_question'
+  
+  match 'ideas/:idea_id/voteup' => 'ratings#voteup', :as => 'voteup'
+  match 'ideas/:idea_id/votedown' => 'ratings#votedown', :as => 'votedown'
+  
+  match 'ideas/:idea_id/add_my_favorite' => 'favorites#add_my_favorite', :as => 'add_my_favorite'
   
   match 'home/:action' => 'home#:action', :as => 'home'
   

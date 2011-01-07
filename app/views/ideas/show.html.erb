@@ -30,6 +30,35 @@
     
     <div id="idea_questions">
       <h1>Feedback</h1>
+      <h2>Ratings &amp; Statistics</h2>
+      <div class="articles" id="idea_stats">
+        <div class="article" id="left">
+          <div class="section">
+            <%= link_to voteup_path(@idea) do  %> 
+              <img src='/images/ico_voteup.png' /> <%= pluralize(Rating.where(:rating_type => 1, :idea_id => @idea).count, "Vote") %> Up
+            <% end %>
+          </div>
+          <div class="section">
+            <%= link_to votedown_path(@idea) do  %> 
+              <img src='/images/ico_votedown.png' /> <%= pluralize(Rating.where(:rating_type => 2, :idea_id => @idea).count, "Vote") %> Down 
+            <% end %>
+          </div>
+        </div>
+        <div class="article" id="left">
+          <div class="section">
+            <%= link_to add_my_favorite_path(@idea) do  %> 
+              <img src='/images/ico_favorite.png' /> <%= pluralize(@idea.favorites.count, "Favorite") %>
+            <% end %>
+          </div>
+          <div class="section">
+            <%= link_to idea_path(@idea) do  %> 
+              <img src='/images/ico_stats.png' /> <%= pluralize(@idea.views.count, "View")%>
+            <% end %>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      
       <h2>Questions &amp; Answers</h2>
       <ul>
         <% questions = Question.where(:idea_id => @idea.id).each do |q| %>
