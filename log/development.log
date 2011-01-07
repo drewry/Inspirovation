@@ -27179,3 +27179,2536 @@ Started GET "/ideas" for 75.143.86.236 at 2011-01-06 15:34:17 -0600
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Rendered ideas/index.html.erb within layouts/application (144.0ms)
 Completed 200 OK in 200ms (Views: 171.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 15:35:43 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (222.0ms)
+Completed 200 OK in 277ms (Views: 242.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 15:36:09 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 160ms (Views: 131.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 15:36:11 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (231.0ms)
+Completed 200 OK in 286ms (Views: 252.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_out" for 75.143.86.236 at 2011-01-06 15:36:22 -0600
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "remember_token" = NULL, "remember_created_at" = NULL, "updated_at" = '2011-01-06 21:36:22.734650' WHERE ("users"."id" = 1)
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 146ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 15:36:22 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (2.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered home/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 118ms (Views: 96.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for 75.143.86.236 at 2011-01-06 15:36:24 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered devise/sessions/new.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 136ms (Views: 98.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 75.143.86.236 at 2011-01-06 15:36:32 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "user"=>{"email"=>"shadow257@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'shadow257@gmail.com') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2011-01-06 20:52:53.155900', "current_sign_in_at" = '2011-01-06 21:36:32.360650', "last_sign_in_ip" = '75.143.86.236', "sign_in_count" = 3, "updated_at" = '2011-01-06 21:36:32.361650' WHERE ("users"."id" = 2)
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 171ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 15:36:32 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 44ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 15:36:32 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (2.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (129.0ms)
+Completed 200 OK in 180ms (Views: 151.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/20" for 75.143.86.236 at 2011-01-06 15:36:34 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 20) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 20)
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (138.0ms)
+Completed 200 OK in 193ms (Views: 157.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/subideas/new/143e20" for 75.143.86.236 at 2011-01-06 15:36:38 -0600
+  Processing by SubideasController#new as HTML
+  Parameters: {"extra"=>"143e20"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 20) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered subideas/new.html.erb within layouts/application (224.0ms)
+Completed 200 OK in 280ms (Views: 247.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/20" for 75.143.86.236 at 2011-01-06 15:36:40 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 20) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 20)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (294.0ms)
+Completed 200 OK in 350ms (Views: 314.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_out" for 75.143.86.236 at 2011-01-06 15:36:41 -0600
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 104ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 15:36:41 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered home/index.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 103ms (Views: 80.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/sign_in" for 75.143.86.236 at 2011-01-06 15:36:43 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered devise/sessions/new.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 137ms (Views: 92.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 75.143.86.236 at 2011-01-06 15:36:46 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "user"=>{"email"=>"dhmorris@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'dhmorris@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."remember_token" = '5PGchKbE2TGOLDeE9VXo') LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "remember_token" = '5PGchKbE2TGOLDeE9VXo', "remember_created_at" = '2011-01-06 21:36:47.019650', "updated_at" = '2011-01-06 21:36:47.019650' WHERE ("users"."id" = 1)
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-06 21:34:16.975650', "current_sign_in_at" = '2011-01-06 21:36:47.045650', "sign_in_count" = 18, "updated_at" = '2011-01-06 21:36:47.045650' WHERE ("users"."id" = 1)[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 231ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 15:36:47 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 87ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 15:36:47 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (2.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 182ms (Views: 155.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 15:36:51 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (258.0ms)
+Completed 200 OK in 316ms (Views: 279.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:55:36 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (274.0ms)
+Completed 200 OK in 328ms (Views: 294.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:57:52 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (241.0ms)
+Completed 200 OK in 295ms (Views: 262.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:58:02 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (287.0ms)
+Completed 200 OK in 341ms (Views: 307.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:58:07 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (327.0ms)
+Completed 200 OK in 391ms (Views: 350.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:58:31 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (275.0ms)
+Completed 200 OK in 329ms (Views: 297.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:58:43 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (7.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (313.0ms)
+Completed 200 OK in 413ms (Views: 328.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:58:58 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (311.0ms)
+Completed 200 OK in 536ms (Views: 433.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:59:17 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (243.0ms)
+Completed 200 OK in 347ms (Views: 307.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 16:59:35 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (272.0ms)
+Completed 200 OK in 328ms (Views: 294.0ms | ActiveRecord: 3.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110104205755)
+Migrating to CreateIdeas (20110104234831)
+Migrating to CreateMaps (20110105224239)
+Migrating to CreateSubideas (20110105224444)
+Migrating to AddParentidToSubideas (20110106040129)
+Migrating to CreateQuestions (20110106230146)
+  [1m[35mSQL (9.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (8.0ms)[0m  [1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "answer" text, "idea_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110106230146')
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("ideas")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("maps")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("subideas")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:03:04 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (294.0ms)
+Completed 200 OK in 623ms (Views: 317.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:05:47 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (246.0ms)
+Completed 200 OK in 299ms (Views: 266.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:07:41 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (295.0ms)
+Completed 200 OK in 353ms (Views: 317.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:07:57 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (289.0ms)
+Completed 200 OK in 345ms (Views: 309.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:08:14 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (282.0ms)
+Completed 200 OK in 335ms (Views: 300.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:08:30 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (368.0ms)
+Completed 200 OK in 423ms (Views: 389.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:08:40 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (279.0ms)
+Completed 200 OK in 375ms (Views: 302.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/questions/new" for 75.143.86.236 at 2011-01-06 17:08:53 -0600
+  Processing by QuestionsController#new as HTML
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (212.0ms)
+Completed 200 OK in 263ms (Views: 239.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/new" for 75.143.86.236 at 2011-01-06 17:11:12 -0600
+  Processing by QuestionsController#new as HTML
+Rendered questions/_form.html.erb (11.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 180ms (Views: 158.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:11:14 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 90ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:11:14 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 183ms (Views: 153.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:11:16 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (274.0ms)
+Completed 200 OK in 331ms (Views: 297.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:11:17 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (11.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 224ms (Views: 197.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:11:42 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (291.0ms)
+Completed 200 OK in 359ms (Views: 313.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:11:45 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (171.0ms)
+Completed 200 OK in 253ms (Views: 196.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:12:46 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 249ms (Views: 187.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:13:30 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (9.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (166.0ms)
+Completed 200 OK in 213ms (Views: 189.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:14:10 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (11.0ms)
+  [1m[35mSQL (2.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (166.0ms)
+Completed 200 OK in 256ms (Views: 188.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:15:06 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (180.0ms)
+Completed 200 OK in 231ms (Views: 203.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:17:03 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 225ms (Views: 198.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:17:08 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (9.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (205.0ms)
+Completed 200 OK in 258ms (Views: 229.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:17:24 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (12.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (209.0ms)
+Completed 200 OK in 261ms (Views: 235.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:17:38 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT "questions".* FROM "questions"
+Rendered questions/index.html.erb within layouts/application (76.0ms)
+Completed   in 252ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_35747232__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (282.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (303.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:18:06 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (3.0ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed   in 72ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_34140336__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (215.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (265.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:18:08 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (169.0ms)
+Completed 200 OK in 219ms (Views: 193.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:18:10 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (224.0ms)
+Completed 200 OK in 325ms (Views: 248.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:18:12 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (11.0ms)
+  [1m[35mSQL (2.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (184.0ms)
+Completed 200 OK in 239ms (Views: 210.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:18:19 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (12.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 254ms (Views: 219.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:18:20 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (267.0ms)
+Completed 200 OK in 326ms (Views: 289.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/new" for 75.143.86.236 at 2011-01-06 17:21:31 -0600
+  Processing by IdeasController#new as HTML
+Rendered ideas/_form.html.erb (16.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/new.html.erb within layouts/application (141.0ms)
+Completed 200 OK in 199ms (Views: 166.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:21:53 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 80ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:21:53 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (2.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 194ms (Views: 156.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:21:55 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (261.0ms)
+Completed 200 OK in 319ms (Views: 283.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:30:01 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (9.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/new.html.erb within layouts/application (180.0ms)
+Completed 200 OK in 231ms (Views: 206.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:30:04 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (259.0ms)
+Completed 200 OK in 317ms (Views: 280.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:31:19 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 377ms (Views: 307.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:32:03 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+ERROR: compiling _app_views_ideas_show_html_erb___645053122_32181120__618809965 RAISED C:/RoR/inspirovation/app/views/ideas/show.html.erb:37: syntax error, unexpected keyword_else, expecting keyword_end
+');         else 
+                ^
+Function body:           def _app_views_ideas_show_html_erb___645053122_32181120__618809965(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "ideas/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id="big_idea">
+  <div class="actions">
+    ');@output_buffer.append= ( link_to 'Return to Ideas', ideas_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="articles">
+    <div id="idea_map">
+      ');@output_buffer.append= ( build_idea_map(@idea.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </div> 
+    
+    <div id="idea_info"> 
+      <h1>');@output_buffer.append= ( @idea.title );@output_buffer.safe_concat('</h1>
+      <h2>Why is it useful?</h2>
+      <p>');@output_buffer.append= ( @idea.statement );@output_buffer.safe_concat('</p>
+      <h2>How does it work?</h2>
+      <p>');@output_buffer.append= ( @idea.summary );@output_buffer.safe_concat('</p>
+      <div class="actions" style="float: right">
+');         if current_user.id == @idea.user.id 
+@output_buffer.safe_concat('          
+          ');@output_buffer.append=  link_to edit_idea_path(@idea) do  @output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('            <img src=\'/images/ico_edit.png\' />
+');           end 
+@output_buffer.safe_concat('          
+          ');@output_buffer.append=  link_to @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete do  @output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('            <img src=\'/images/ico_delete.png\' />
+');           end 
+@output_buffer.safe_concat('
+');         end 
+@output_buffer.safe_concat('      </div>
+    </div>
+    
+    <div id="idea_questions">
+      <h1>Feedback</h1>
+      <h2>Questions &amp; Answers</h2>
+      <ul>
+');@output_buffer.append_if_string=          questions = Question.where(:idea_id => @idea.id).each do |q| 
+@output_buffer.safe_concat('          <li><a href="">');@output_buffer.append= ( q.title );@output_buffer.safe_concat('</a></li>
+');         else 
+@output_buffer.safe_concat('          No questions yet, start us off by <a href="/questions/new/');@output_buffer.append= ( @idea.id );@output_buffer.safe_concat('">asking one</a>.
+');         end 
+@output_buffer.safe_concat('      </ul>
+      <div class="f_actions">
+        ');@output_buffer.append=  link_to new_question_path(@idea.id) do  @output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('          <img src=\'/images/ico_register.png\' /> Post Question
+');         end 
+@output_buffer.safe_concat('      </div>
+    </div>
+  
+    <div class="clear"></div>
+  </div>
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+c:/Ruby192/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+C:/RoR/inspirovation/app/controllers/ideas_controller.rb:18:in `show'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__981744535__process_action__804029741__callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+c:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered ideas/show.html.erb within layouts/application (16.0ms)
+Completed   in 77ms
+
+ActionView::Template::Error (C:/RoR/inspirovation/app/views/ideas/show.html.erb:37: syntax error, unexpected keyword_else, expecting keyword_end
+');         else 
+                ^):
+    34:       <ul>
+    35:         <% questions = Question.where(:idea_id => @idea.id).each do |q| %>
+    36:           <li><a href=""><%= q.title %></a></li>
+    37:         <% else %>
+    38:           No questions yet, start us off by <a href="/questions/new/<%= @idea.id %>">asking one</a>.
+    39:         <% end %>
+    40:       </ul>
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (181.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (197.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:33:01 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (332.0ms)
+Completed 200 OK in 392ms (Views: 354.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:33:28 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (287.0ms)
+Completed 200 OK in 427ms (Views: 316.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:33:44 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (305.0ms)
+Completed 200 OK in 366ms (Views: 329.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:33:52 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (341.0ms)
+Completed 200 OK in 405ms (Views: 365.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:34:03 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (330.0ms)
+Completed 200 OK in 392ms (Views: 350.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:34:10 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (284.0ms)
+Completed 200 OK in 525ms (Views: 308.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:35:00 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (300.0ms)
+Completed 200 OK in 363ms (Views: 321.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:35:08 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+Rendered questions/_form.html.erb (9.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/new.html.erb within layouts/application (181.0ms)
+Completed 200 OK in 242ms (Views: 209.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:36:34 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (184.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/new.html.erb within layouts/application (202.0ms)
+Completed 200 OK in 248ms (Views: 222.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:36:40 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (3.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (309.0ms)
+Completed 200 OK in 370ms (Views: 329.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/sign_out" for 75.143.86.236 at 2011-01-06 17:36:42 -0600
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "remember_token" = NULL, "remember_created_at" = NULL, "updated_at" = '2011-01-06 23:36:43.012150' WHERE ("users"."id" = 1)[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 308ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:36:43 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered home/index.html.erb within layouts/application (227.0ms)
+Completed 200 OK in 276ms (Views: 253.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 75.143.86.236 at 2011-01-06 17:36:44 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered devise/sessions/new.html.erb within layouts/application (254.0ms)
+Completed 200 OK in 320ms (Views: 278.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 75.143.86.236 at 2011-01-06 17:36:52 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "user"=>{"email"=>"shadow257@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'shadow257@gmail.com') LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-06 21:36:32.360650', "current_sign_in_at" = '2011-01-06 23:36:52.858150', "sign_in_count" = 4, "updated_at" = '2011-01-06 23:36:52.858150' WHERE ("users"."id" = 2)[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 466ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:36:52 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 172ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:36:53 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (219.0ms)
+Completed 200 OK in 273ms (Views: 238.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:36:55 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (5.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (334.0ms)
+Completed 200 OK in 472ms (Views: 354.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:36:56 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered questions/_form.html.erb (250.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/new.html.erb within layouts/application (269.0ms)
+Completed 200 OK in 317ms (Views: 290.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/questions" for 75.143.86.236 at 2011-01-06 17:37:08 -0600
+  Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"title"=>"Test question", "idea_id"=>"18"}, "commit"=>"Create Question"}
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "questions" ("title", "answer", "idea_id", "created_at", "updated_at") VALUES ('Test question', NULL, 18, '2011-01-06 23:37:08.871150', '2011-01-06 23:37:08.871150')[0m
+Redirected to http://inspirovation.co.cc/questions/1
+Completed 302 Found in 121ms
+
+
+Started GET "/questions/1" for 75.143.86.236 at 2011-01-06 17:37:08 -0600
+  Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered questions/show.html.erb within layouts/application (225.0ms)
+Completed 200 OK in 280ms (Views: 249.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/questions/1" for 75.143.86.236 at 2011-01-06 17:39:04 -0600
+  Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered questions/show.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 209ms (Views: 144.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:39:07 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"
+Rendered questions/index.html.erb within layouts/application (14.0ms)
+Completed   in 64ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_33080616__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (146.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (312.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:39:17 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 83ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:39:17 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 190ms (Views: 155.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:39:19 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (306.0ms)
+Completed 200 OK in 407ms (Views: 324.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:39:22 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered questions/_form.html.erb (196.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (214.0ms)
+Completed 200 OK in 264ms (Views: 234.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/questions" for 75.143.86.236 at 2011-01-06 17:39:28 -0600
+  Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"title"=>"this is another test", "idea_id"=>"18"}, "commit"=>"Create Question"}
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "questions" ("title", "answer", "idea_id", "created_at", "updated_at") VALUES ('this is another test', NULL, 18, '2011-01-06 23:39:28.365150', '2011-01-06 23:39:28.365150')
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas.18
+Completed 302 Found in 275ms
+
+
+Started GET "/ideas.18" for 75.143.86.236 at 2011-01-06 17:39:28 -0600
+  Processing by IdeasController#index as 
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+Completed 406 Not Acceptable in 29ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:39:38 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (340.0ms)
+Completed 200 OK in 402ms (Views: 359.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:39:40 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered questions/_form.html.erb (231.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (251.0ms)
+Completed 200 OK in 301ms (Views: 273.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/questions" for 75.143.86.236 at 2011-01-06 17:39:43 -0600
+  Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"title"=>"testing yet again", "idea_id"=>"18"}, "commit"=>"Create Question"}
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "questions" ("title", "answer", "idea_id", "created_at", "updated_at") VALUES ('testing yet again', NULL, 18, '2011-01-06 23:39:44.127150', '2011-01-06 23:39:44.127150')
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+Completed   in 288ms
+
+NoMethodError (undefined method `ideas' for #<QuestionsController:0x6833340>):
+  app/controllers/questions_controller.rb:47:in `block (2 levels) in create'
+  app/controllers/questions_controller.rb:45:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (181.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (198.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:39:56 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (42.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered questions/_form.html.erb (322.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (341.0ms)
+Completed 200 OK in 390ms (Views: 320.0ms | ActiveRecord: 48.0ms)
+
+
+Started POST "/questions" for 75.143.86.236 at 2011-01-06 17:40:00 -0600
+  Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"title"=>"we just keep on asking..", "idea_id"=>"18"}, "commit"=>"Create Question"}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "questions" ("title", "answer", "idea_id", "created_at", "updated_at") VALUES ('we just keep on asking..', NULL, 18, '2011-01-06 23:40:00.595150', '2011-01-06 23:40:00.595150')
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas/18
+Completed 302 Found in 350ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:40:00 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (457.0ms)
+Completed 200 OK in 522ms (Views: 484.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:40:55 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (316.0ms)
+Completed 200 OK in 378ms (Views: 338.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:41:13 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (623.0ms)
+Completed 200 OK in 683ms (Views: 642.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:42:01 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (322.0ms)
+Completed 200 OK in 384ms (Views: 342.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:43:51 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+Rendered ideas/show.html.erb within layouts/application (356.0ms)
+Completed   in 417ms
+
+ActionView::Template::Error (undefined method `idea' for nil:NilClass):
+    38:               <blockquote>
+    39:                 <%= q.answer %>
+    40:                 <div class="actions">
+    41:                   <% if current_user.id == @subidea.idea.user.id %>
+    42:                     <%= link_to 'Answer', edit_question_path(question) %> | 
+    43:                     <%= link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete %>
+    44:                   <% end %>
+  app/views/ideas/show.html.erb:41:in `block in _app_views_ideas_show_html_erb___645053122_34491288__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_34491288__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (180.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (196.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:44:02 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (277.0ms)
+Completed 200 OK in 371ms (Views: 295.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:44:19 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+Rendered questions/index.html.erb within layouts/application (52.0ms)
+Completed   in 99ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_32135532__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (231.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (248.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:44:58 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (2.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered questions/_form.html.erb (217.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (234.0ms)
+Completed 200 OK in 281ms (Views: 253.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:44:59 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 90ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:44:59 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (294.0ms)
+Completed 200 OK in 351ms (Views: 316.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:45:01 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (316.0ms)
+Completed 200 OK in 530ms (Views: 335.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:45:26 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+Rendered ideas/show.html.erb within layouts/application (439.0ms)
+Completed   in 496ms
+
+ActionView::Template::Error (undefined method `user_id' for #<Question:0x2bcbfc0>):
+    37:               
+    38:               <blockquote>
+    39:                 <%= q.answer %>
+    40:                 <%= q.user_id %>
+    41:                 <div class="actions">
+    42:                   <% if current_user.id == @idea.user.id %>
+    43:                     <%= link_to 'Answer', edit_question_path(question) %> | 
+  app/views/ideas/show.html.erb:40:in `block in _app_views_ideas_show_html_erb___645053122_35740344__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_35740344__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (169.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (194.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:45:32 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (24.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+Rendered ideas/show.html.erb within layouts/application (312.0ms)
+Completed   in 414ms
+
+ActionView::Template::Error (undefined method `user' for #<Question:0x410e2c0>):
+    37:               
+    38:               <blockquote>
+    39:                 <%= q.answer %>
+    40:                 <%= q.user %>
+    41:                 <div class="actions">
+    42:                   <% if current_user.id == @idea.user.id %>
+    43:                     <%= link_to 'Answer', edit_question_path(question) %> | 
+  app/views/ideas/show.html.erb:40:in `block in _app_views_ideas_show_html_erb___645053122_53416524__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_53416524__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (182.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (232.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:46:00 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (2.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (315.0ms)
+Completed 200 OK in 371ms (Views: 331.0ms | ActiveRecord: 36.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:46:15 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (359.0ms)
+Completed 200 OK in 422ms (Views: 381.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:46:26 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (294.0ms)
+Completed 200 OK in 484ms (Views: 315.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:46:54 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (359.0ms)
+Completed 200 OK in 423ms (Views: 380.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:47:27 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (368.0ms)
+Completed 200 OK in 463ms (Views: 397.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users/sign_out" for 75.143.86.236 at 2011-01-06 17:47:34 -0600
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 55ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:47:34 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered home/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 139ms (Views: 78.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 75.143.86.236 at 2011-01-06 17:47:36 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (3.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered devise/sessions/new.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 195ms (Views: 110.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 75.143.86.236 at 2011-01-06 17:47:38 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "user"=>{"email"=>"dhmorris@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'dhmorris@gmail.com') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."remember_token" = 'CVCUhkVG7UGSdNLwtHNa') LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "remember_token" = 'CVCUhkVG7UGSdNLwtHNa', "remember_created_at" = '2011-01-06 23:47:38.694150', "updated_at" = '2011-01-06 23:47:38.694150' WHERE ("users"."id" = 1)[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2011-01-06 21:36:47.045650', "current_sign_in_at" = '2011-01-06 23:47:38.740150', "sign_in_count" = 19, "updated_at" = '2011-01-06 23:47:38.741150' WHERE ("users"."id" = 1)
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 258ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:47:38 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 287ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:47:39 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (272.0ms)
+Completed 200 OK in 325ms (Views: 295.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:47:41 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (360.0ms)
+Completed 200 OK in 500ms (Views: 384.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:48:18 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+Rendered ideas/show.html.erb within layouts/application (697.0ms)
+Completed   in 756ms
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x48445b0>:0x48433b0>):
+    43:               
+    44:               <% if current_user.id == @idea.user.id %>
+    45:                 <div class="actions">
+    46:                   <%= link_to 'Answer', edit_question_path(question) %> | 
+    47:                   <%= link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete %>
+    48:                 </div>
+    49:               <% end %>              
+  app/views/ideas/show.html.erb:46:in `block in _app_views_ideas_show_html_erb___645053122_36399000__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_36399000__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (215.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (232.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:48:33 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (3.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+Rendered ideas/show.html.erb within layouts/application (629.0ms)
+Completed   in 718ms
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x65f1df8>:0x65f0970>):
+    43:               
+    44:               <% if current_user.id == @idea.user.id %>
+    45:                 <div class="actions">
+    46:                   <%= link_to 'Answer', edit_question_path(question) %> | 
+    47:                   <%= link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete %>
+    48:                 </div>
+    49:               <% end %>              
+  app/views/ideas/show.html.erb:46:in `block in _app_views_ideas_show_html_erb___645053122_53443776__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_53443776__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (210.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (226.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:49:08 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+Rendered ideas/show.html.erb within layouts/application (663.0ms)
+Completed   in 755ms
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x4ee35b0>:0x4ee2350>):
+    44:               <% if current_user.id == @idea.user.id %>
+    45:                 <div class="actions">
+    46:                   <%= link_to 'Answer', edit_question_path(q) %> | 
+    47:                   <%= link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete %>
+    48:                 </div>
+    49:               <% end %>              
+    50:     
+  app/views/ideas/show.html.erb:47:in `block in _app_views_ideas_show_html_erb___645053122_41356188__618809965'
+  app/views/ideas/show.html.erb:35:in `_app_views_ideas_show_html_erb___645053122_41356188__618809965'
+  app/controllers/ideas_controller.rb:18:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (176.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (193.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:49:15 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (279.0ms)
+Completed 200 OK in 334ms (Views: 298.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/questions/4/edit" for 75.143.86.236 at 2011-01-06 17:49:22 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 4) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 4) LIMIT 1
+Rendered questions/_form.html.erb (279.0ms)
+Rendered questions/edit.html.erb within layouts/application (297.0ms)
+Completed   in 351ms
+
+ActionView::Template::Error (Couldn't find Idea with ID=4):
+    18:     <%= f.text_area :title %>
+    19:   </div>
+    20:   <%
+    21:   idea = Idea.find(params[:id])
+    22:   if idea.user.id == current_user.id
+    23:   %>
+    24:     <div class="field" id="answer">
+  app/views/questions/_form.html.erb:21:in `block in _app_views_questions__form_html_erb__439256687_32154324_832424330'
+  app/views/questions/_form.html.erb:3:in `_app_views_questions__form_html_erb__439256687_32154324_832424330'
+  app/views/questions/edit.html.erb:7:in `_app_views_questions_edit_html_erb__400002798_33205320__618809965'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (142.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (192.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:49:37 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (154.0ms)
+Rendered questions/edit.html.erb within layouts/application (172.0ms)
+Completed   in 221ms
+
+ActionView::Template::Error (Couldn't find Idea with ID=1):
+    18:     <%= f.text_area :title %>
+    19:   </div>
+    20:   <%
+    21:   idea = Idea.find(params[:id])
+    22:   if idea.user.id == current_user.id
+    23:   %>
+    24:     <div class="field" id="answer">
+  app/views/questions/_form.html.erb:21:in `block in _app_views_questions__form_html_erb__439256687_35235552_832424330'
+  app/views/questions/_form.html.erb:3:in `_app_views_questions__form_html_erb__439256687_35235552_832424330'
+  app/views/questions/edit.html.erb:7:in `_app_views_questions_edit_html_erb__400002798_39073596__618809965'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (248.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (268.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:50:20 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (58.0ms)
+Rendered questions/edit.html.erb within layouts/application (78.0ms)
+Completed   in 126ms
+
+ActionView::Template::Error (Couldn't find Idea with ID=1):
+    19:   </div>
+    20:   <%
+    21:   if params != nil
+    22:     idea = Idea.find(params[:id])
+    23:     if idea.user.id == current_user.id
+    24:     %>
+    25:       <div class="field" id="answer">
+  app/views/questions/_form.html.erb:22:in `block in _app_views_questions__form_html_erb__439256687_40462572_832424330'
+  app/views/questions/_form.html.erb:3:in `_app_views_questions__form_html_erb__439256687_40462572_832424330'
+  app/views/questions/edit.html.erb:7:in `_app_views_questions_edit_html_erb__400002798_53025240__618809965'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (180.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (198.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:52:11 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (4.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/edit.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 153ms (Views: 126.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:52:31 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT "questions".* FROM "questions"
+Rendered questions/index.html.erb within layouts/application (19.0ms)
+Completed   in 67ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_34315332__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (279.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (300.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:52:49 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (18.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (43.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/edit.html.erb within layouts/application (198.0ms)
+Completed 200 OK in 283ms (Views: 206.0ms | ActiveRecord: 46.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:53:11 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (16.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/edit.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 270ms (Views: 160.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:53:15 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 50ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:53:16 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 145ms (Views: 114.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:53:17 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (2.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 499ms (Views: 302.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:53:21 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (68.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/edit.html.erb within layouts/application (321.0ms)
+Completed 200 OK in 383ms (Views: 350.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:53:38 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (23.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/edit.html.erb within layouts/application (190.0ms)
+Completed 200 OK in 255ms (Views: 227.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:53:54 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (15.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/edit.html.erb within layouts/application (368.0ms)
+Completed 200 OK in 420ms (Views: 392.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:55:52 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (180.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/edit.html.erb within layouts/application (198.0ms)
+Completed 200 OK in 249ms (Views: 219.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:55:56 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 53ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:55:56 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (232.0ms)
+Completed 200 OK in 288ms (Views: 257.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:55:59 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (506.0ms)
+Completed 200 OK in 568ms (Views: 529.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/4/edit" for 75.143.86.236 at 2011-01-06 17:56:01 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 4) LIMIT 1
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (234.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/edit.html.erb within layouts/application (253.0ms)
+Completed 200 OK in 313ms (Views: 275.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:56:06 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+Rendered questions/new.html.erb within layouts/application (1.0ms)
+Completed   in 53ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"ideas"}):
+    1: <div id="f_ideas">
+    2:   <%= link_to 'Return to Idea', idea_path(params[:id]) %>
+    3:   <h1>Ask Question</h1>
+    4:   <%= render 'form' %>
+    5: </div>
+  app/views/questions/new.html.erb:2:in `_app_views_questions_new_html_erb__103656728_32603880__618809965'
+  app/controllers/questions_controller.rb:29:in `new'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (225.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (290.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:56:41 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+Rendered questions/new.html.erb within layouts/application (349.0ms)
+Completed   in 449ms
+
+ActionView::Template::Error (undefined local variable or method `idea_id' for #<#<Class:0x4d6b428>:0x4d69d48>):
+    1: <div id="f_ideas">
+    2:   <%= link_to 'Return to Idea', idea_path(idea_id) %>
+    3:   <h1>Ask Question</h1>
+    4:   <%= render 'form' %>
+    5: </div>
+  app/views/questions/new.html.erb:2:in `_app_views_questions_new_html_erb__103656728_40537680__618809965'
+  app/controllers/questions_controller.rb:29:in `new'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (140.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (157.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 17:56:52 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+  [1m[35mIdea Load (2.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (185.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (204.0ms)
+Completed 200 OK in 253ms (Views: 226.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:56:55 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (540.0ms)
+Completed 200 OK in 601ms (Views: 561.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:57:13 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (597.0ms)
+Completed 200 OK in 659ms (Views: 619.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:57:15 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (78.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/edit.html.erb within layouts/application (315.0ms)
+Completed 200 OK in 368ms (Views: 340.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:57:16 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (404.0ms)
+Completed 200 OK in 580ms (Views: 425.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:57:18 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (2.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (80.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/edit.html.erb within layouts/application (257.0ms)
+Completed 200 OK in 318ms (Views: 287.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/1/edit" for 75.143.86.236 at 2011-01-06 17:58:38 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (155.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/edit.html.erb within layouts/application (233.0ms)
+Completed 200 OK in 283ms (Views: 254.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/questions/1" for 75.143.86.236 at 2011-01-06 17:58:49 -0600
+  Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"answer"=>"Your question is stupid.", "idea_id"=>"18"}, "commit"=>"Update Question", "id"=>"1"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "questions" SET "answer" = 'Your question is stupid.', "updated_at" = '2011-01-06 23:58:49.339150' WHERE ("questions"."id" = 1)
+Redirected to http://inspirovation.co.cc/questions/1
+Completed 302 Found in 72ms
+
+
+Started GET "/questions/1" for 75.143.86.236 at 2011-01-06 17:58:49 -0600
+  Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/show.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 175ms (Views: 149.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:59:18 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT "questions".* FROM "questions"
+Rendered questions/index.html.erb within layouts/application (18.0ms)
+Completed   in 67ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_35078148__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (202.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (227.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 17:59:21 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 85ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 17:59:21 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 221ms (Views: 186.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:59:22 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (317.0ms)
+Completed 200 OK in 378ms (Views: 337.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/questions/2/edit" for 75.143.86.236 at 2011-01-06 17:59:29 -0600
+  Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 2) LIMIT 1
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (124.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/edit.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 254ms (Views: 226.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/questions/2" for 75.143.86.236 at 2011-01-06 17:59:37 -0600
+  Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "question"=>{"answer"=>"This is yet another answer to yet another stupid question.", "idea_id"=>"18"}, "commit"=>"Update Question", "id"=>"2"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 2) LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "questions" SET "answer" = 'This is yet another answer to yet another stupid question.', "updated_at" = '2011-01-06 23:59:37.124150' WHERE ("questions"."id" = 2)[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas/18
+Completed 302 Found in 113ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 17:59:37 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (306.0ms)
+Completed 200 OK in 361ms (Views: 327.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/questions/3" for 75.143.86.236 at 2011-01-06 17:59:41 -0600
+  Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "id"=>"3"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 3) LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mDELETE FROM "questions" WHERE ("questions"."id" = 3)[0m
+Redirected to http://inspirovation.co.cc/questions
+Completed 302 Found in 87ms
+
+
+Started GET "/questions" for 75.143.86.236 at 2011-01-06 17:59:42 -0600
+  Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT "questions".* FROM "questions"
+Rendered questions/index.html.erb within layouts/application (17.0ms)
+Completed   in 63ms
+
+ActionView::Template::Error (No route matches {:controller=>"questions", :action=>"new"}):
+    24: 
+    25: <br />
+    26: 
+    27: <%= link_to 'New Question', new_question_path %>
+  app/views/questions/index.html.erb:27:in `_app_views_questions_index_html_erb___332301827_34317624__618809965'
+  app/controllers/questions_controller.rb:7:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (206.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (224.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 18:00:19 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 112ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 18:00:19 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (2.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (188.0ms)
+Completed 200 OK in 239ms (Views: 211.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:00:21 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (288.0ms)
+Completed 200 OK in 347ms (Views: 308.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/questions/4" for 75.143.86.236 at 2011-01-06 18:00:24 -0600
+  Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "id"=>"4"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 4) LIMIT 1
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  DELETE FROM "questions" WHERE ("questions"."id" = 4)
+Redirected to http://inspirovation.co.cc/ideas/18
+Completed 302 Found in 141ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:00:24 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (262.0ms)
+Completed 200 OK in 396ms (Views: 281.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/questions/2" for 75.143.86.236 at 2011-01-06 18:00:27 -0600
+  Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "id"=>"2"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 2) LIMIT 1
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  DELETE FROM "questions" WHERE ("questions"."id" = 2)
+Redirected to http://inspirovation.co.cc/ideas/18
+Completed 302 Found in 318ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:00:28 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (435.0ms)
+Completed 200 OK in 492ms (Views: 454.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/questions/1" for 75.143.86.236 at 2011-01-06 18:00:30 -0600
+  Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "id"=>"1"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."id" = 1) LIMIT 1
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  DELETE FROM "questions" WHERE ("questions"."id" = 1)
+Redirected to http://inspirovation.co.cc/ideas/18
+Completed 302 Found in 329ms
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:00:30 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (384.0ms)
+Completed 200 OK in 438ms (Views: 403.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 18:00:36 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered questions/_form.html.erb (231.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (248.0ms)
+Completed 200 OK in 303ms (Views: 271.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:00:39 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (403.0ms)
+Completed 200 OK in 464ms (Views: 427.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:01:35 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mSubidea Load (0.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (261.0ms)
+Completed 200 OK in 321ms (Views: 287.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 18:01:38 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered questions/new.html.erb within layouts/application (252.0ms)
+Completed 200 OK in 303ms (Views: 276.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_out" for 75.143.86.236 at 2011-01-06 18:01:40 -0600
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mUPDATE "users" SET "remember_token" = NULL, "remember_created_at" = NULL, "updated_at" = '2011-01-07 00:01:40.907150' WHERE ("users"."id" = 1)[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 107ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 18:01:40 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered home/index.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 106ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 75.143.86.236 at 2011-01-06 18:01:42 -0600
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered devise/sessions/new.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 198ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 75.143.86.236 at 2011-01-06 18:01:50 -0600
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKtvgtCpqZF/d8QjI3V9kCBQuDLyolyequSMQxso5Fk=", "user"=>{"email"=>"shadow257@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'shadow257@gmail.com') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-06 23:36:52.858150', "current_sign_in_at" = '2011-01-07 00:01:50.587150', "sign_in_count" = 5, "updated_at" = '2011-01-07 00:01:50.588150' WHERE ("users"."id" = 2)[0m
+Redirected to http://inspirovation.co.cc/
+Completed 302 Found in 268ms
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-06 18:01:50 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 46ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-06 18:01:50 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 145ms (Views: 115.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-06 18:01:53 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 343ms (Views: 300.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/questions/new/18" for 75.143.86.236 at 2011-01-06 18:01:54 -0600
+  Processing by QuestionsController#new as HTML
+  Parameters: {"idea_id"=>"18"}
+  [1m[36mIdea Load (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered questions/_form.html.erb (10.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered questions/new.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 200ms (Views: 169.0ms | ActiveRecord: 4.0ms)

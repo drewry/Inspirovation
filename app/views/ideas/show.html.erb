@@ -27,6 +27,39 @@
         <% end %>
       </div>
     </div>
+    
+    <div id="idea_questions">
+      <h1>Feedback</h1>
+      <h2>Questions &amp; Answers</h2>
+      <ul>
+        <% questions = Question.where(:idea_id => @idea.id).each do |q| %>
+            <li><%= q.title %>
+              
+              <% if q.answer != nil %>
+                <blockquote>
+                  <%= q.answer %>
+                </blockquote>
+              <% end %>              
+              
+              <% if current_user.id == @idea.user.id %>
+                <div class="actions">
+                  <%= link_to 'Answer', edit_question_path(q) %> | 
+                  <%= link_to 'Delete', q, :confirm => 'Are you sure?', :method => :delete %>
+                </div>
+              <% end %>              
+    
+            </li>       
+        <% end %>
+        <% if questions.empty? %>
+          No questions yet, start us off by <a href="/questions/new/<%= @idea.id %>">asking one</a>.
+        <% end %>
+      </ul>
+      <div class="f_actions">
+        <%= link_to new_question_path(@idea.id) do  %> 
+          <img src='/images/ico_register.png' /> Post Question
+        <% end %>
+      </div>
+    </div>
   
     <div class="clear"></div>
   </div>

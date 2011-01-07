@@ -1,5 +1,7 @@
 Inspirovation::Application.routes.draw do
 
+  resources :questions
+
   resources :subideas
 
   resources :maps
@@ -69,6 +71,8 @@ Inspirovation::Application.routes.draw do
   
   match 'subideas/new/:extra' => 'subideas#new'
   match 'subideas/new/:extra/:parent_id' => 'subideas#new'
+  
+  match 'questions/new/:idea_id' => 'questions#new', :as => 'new_question'
   
   match 'home/:action' => 'home#:action', :as => 'home'
   

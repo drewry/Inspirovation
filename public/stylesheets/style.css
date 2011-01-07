@@ -406,3 +406,64 @@ a:hover {
       margin: 0px;
       padding: 0px;
     }
+
+#idea_questions {
+  float: left;
+  width: 312px;
+  background: #eeece5;
+  padding: 15px;
+  color: #554103;
+  line-height: 20px;
+  margin: 0px 0px 0px 25px;
+}
+  #idea_questions h1 {
+    font-size: 34px;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid #554103;
+    font-weight: normal;
+    margin: 10px 0px 10px 0px;
+  }
+  #idea_questions h2 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  #idea_questions p {
+    padding: 0px 15px 15px 15px;
+  }
+  #idea_questions a {
+    color: #554103;
+  }
+  #idea_questions a:hover {
+    color: #555;
+  }
+  #idea_questions blockquote {
+    padding: 10px 10px 10px 30px;
+  }
+  
+  
+div.f_actions {
+  padding: 20px 0px 0px 0px;
+  text-align: right;
+}
+  div.f_actions a {
+     position: relative;
+     top: -27px;
+     opacity: 0.8;
+  }
+    div.f_actions a img {
+       position: relative;
+       top: 12px;
+    }
+   div.f_actions a:hover {
+     opacity: 1.0;
+   }
+   
+#f_questions {
+  
+}
+  #f_questions #question textarea {
+    max-height: 150px;
+  }
+  #f_questions #answer textarea {
+    max-height: 150px;
+  }

@@ -1,0 +1,9 @@
+<div id="f_ideas">
+  <%= link_to 'Return to Idea', idea_path(params[:idea_id]) %>
+  <h1>Ask Question</h1>
+  <% if Idea.find(params[:idea_id]).user.id == current_user.id %>
+    Sorry you can't ask yourself a question about your own idea.
+  <% else %>
+  <%= render 'form' %>
+  <% end %>
+</div>
