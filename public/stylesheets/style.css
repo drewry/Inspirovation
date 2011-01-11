@@ -492,3 +492,23 @@ div.f_actions {
   #f_questions #answer textarea {
     max-height: 150px;
   }
+ 
+ #f_milestones {
+ 	
+ }
+ 	#f_milestones #summary textarea {
+ 		max-height: 150px;
+ 	}
+	#f_milestones #datetime {
+		min-height: 110px;
+	}
+	#f_milestones #datetime select {
+		padding: 2px;
+	    margin: 20px 0px 20px 0px;
+	    font-size: 12px;
+	    background: #f3f1ee;
+	    color: #000;
+	    font-weight: bold;
+	    border: 1px solid #ddd;
+	    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	}

@@ -1,5 +1,7 @@
 Inspirovation::Application.routes.draw do
 
+  resources :milestones
+
   resources :favorites
 
   resources :views
@@ -82,6 +84,8 @@ Inspirovation::Application.routes.draw do
   
   match 'ideas/:idea_id/voteup' => 'ratings#voteup', :as => 'voteup'
   match 'ideas/:idea_id/votedown' => 'ratings#votedown', :as => 'votedown'
+  
+  match 'milestones/new/:idea_id' => 'milestones#new', :as => 'new_milestone'
   
   match 'ideas/:idea_id/add_my_favorite' => 'favorites#add_my_favorite', :as => 'add_my_favorite'
   

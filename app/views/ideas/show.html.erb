@@ -13,6 +13,10 @@
       <p><%= @idea.statement %></p>
       <h2>How does it work?</h2>
       <p><%= @idea.summary %></p>
+      <h2>Milestones</h2>
+      <% if current_user.id == @idea.user.id %>
+      	<%= link_to 'New Milestone', new_milestone_path(@idea) %>
+      <% end %>
       <div class="actions" style="float: right">
         <% if current_user.id == @idea.user.id %>
           

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  complete: 1
+  due: 2011-01-08 16:46:10
+  idea_id: 1
+  summary: MyText
+
+two:
+  complete: 1
+  due: 2011-01-08 16:46:10
+  idea_id: 1
+  summary: MyText

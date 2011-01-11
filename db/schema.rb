@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110107161236) do
+ActiveRecord::Schema.define(:version => 20110108224610) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "idea_id"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(:version => 20110107161236) do
     t.string   "dir"
     t.integer  "ico_type"
     t.integer  "subidea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "milestones", :force => true do |t|
+    t.integer  "complete"
+    t.datetime "due"
+    t.integer  "idea_id"
+    t.text     "summary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
