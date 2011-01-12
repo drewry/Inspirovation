@@ -27,6 +27,11 @@ a:hover {
 	display: block;
 	clear: both;
 }
+hr {
+  border: 0px;
+  height: 1px;
+  background: #fff;
+}
 
 #header_container {
 	background: url(../images/bg_dashboard.jpg) repeat-x top left;
@@ -503,7 +508,7 @@ div.f_actions {
 		min-height: 110px;
 	}
 	#f_milestones #datetime select {
-		padding: 2px;
+		  padding: 2px;
 	    margin: 20px 0px 20px 0px;
 	    font-size: 12px;
 	    background: #f3f1ee;
@@ -512,3 +517,52 @@ div.f_actions {
 	    border: 1px solid #ddd;
 	    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	}
+  #f_milestones #complete select {
+    padding: 2px;
+    margin: 20px 0px 20px 0px;
+    font-size: 12px;
+    background: #f3f1ee;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;    
+  }
+  #f_milestones #complete span {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    position: relative;
+    top: 3px;
+  }
+  
+.milestone {
+  margin: 0px 0px 0px 0px;
+}
+  .milestone h3 {
+    margin: 0px 15px 0px 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .milestone em {
+    margin: 0px 15px 0px 15px;
+  }
+  .milestone .percent_container {
+    padding: 2px;
+    background: #eeece5;
+    height: 25px;
+    width: 295px;
+    margin: 10px 0px 0px 0px;
+  }
+    .milestone .percent_container .percent {
+      overflow: hidden;
+      width: 0px;
+      min-height: 25px;
+      background: #cbc5b2;
+    }
+      .milestone .percent_container .percent span {
+        position: absolute;
+        font-size: 12px;
+        color: #000;
+        margin: 3px 3px 3px 10px;
+        opacity: 0.7;
+      }

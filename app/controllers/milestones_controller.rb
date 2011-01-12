@@ -36,6 +36,7 @@ class MilestonesController < ApplicationController
   # GET /milestones/1/edit
   def edit
     @milestone = Milestone.find(params[:id])
+    @idea = Idea.find(params[:idea_id])
   end
 
   # POST /milestones
@@ -45,7 +46,7 @@ class MilestonesController < ApplicationController
 
     respond_to do |format|
       if @milestone.save
-        format.html { redirect_to(@milestone, :notice => 'Milestone was successfully created.') }
+        format.html { redirect_to(idea_path(@milestone.idea.id), :notice => 'Milestone was successfully created.') }
         format.xml  { render :xml => @milestone, :status => :created, :location => @milestone }
       else
         format.html { render :action => "new" }
@@ -61,7 +62,7 @@ class MilestonesController < ApplicationController
 
     respond_to do |format|
       if @milestone.update_attributes(params[:milestone])
-        format.html { redirect_to(@milestone, :notice => 'Milestone was successfully updated.') }
+        format.html { redirect_to(idea_path(@milestone.idea.id), :notice => 'Milestone was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -74,10 +75,11 @@ class MilestonesController < ApplicationController
   # DELETE /milestones/1.xml
   def destroy
     @milestone = Milestone.find(params[:id])
+    idea_id = @milestone.idea.id
     @milestone.destroy
 
     respond_to do |format|
-      format.html { redirect_to(milestones_url) }
+      format.html { redirect_to(idea_path(idea_id)) }
       format.xml  { head :ok }
     end
   end

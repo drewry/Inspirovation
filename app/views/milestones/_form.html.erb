@@ -13,21 +13,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :complete, "Complete Percentage" %><br />
-    <%= f.select :complete %>
-  </div>
+  <div class="field" id="summary">
+    <%= f.label :summary, "Milestone Description" %><br />
+    <%= f.text_area :summary %>
+  </div>  
+
   <div class="field" id="datetime">
-    <%= f.label :due %><br />
+    <%= f.label :due, "Date Due" %><br />
     <%= f.datetime_select :due %>
+  </div>
+  
+  <div class="field" id="complete">
+    <%= f.label :complete, "Complete Percentage" %><br />
+    <%= f.select(:complete, (0..100)) %>
+    <span>%</span>
   </div>
 
   <%= f.hidden_field :idea_id, :value => @idea.id %>
 
-  <div class="field" id="summary">
-    <%= f.label :summary %><br />
-    <%= f.text_area :summary %>
-  </div>
   <div class="clear"></div>
   <div class="actions">
     <%= f.submit %>

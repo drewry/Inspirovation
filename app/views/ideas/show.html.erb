@@ -7,29 +7,52 @@
       <%= build_idea_map(@idea.id) %>
     </div> 
     
-    <div id="idea_info"> 
+    <div id="idea_info">     
+      
+      <% if current_user.id == @idea.user.id %>
+          <div class="actions" style="float: right; position: relative; top: -15px;"> 
+              <%= link_to edit_idea_path(@idea) do  %> 
+                <img src='/images/ico_edit.png' />
+              <% end %>
+              
+              <%= link_to @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete do  %> 
+                <img src='/images/ico_delete.png' />
+              <% end %>        
+          </div>
+      <% end %>
+      
       <h1><%= @idea.title %></h1>
+      
       <h2>Why is it useful?</h2>
       <p><%= @idea.statement %></p>
       <h2>How does it work?</h2>
       <p><%= @idea.summary %></p>
       <h2>Milestones</h2>
+      
+      <% milestones = Milestone.where(:idea_id => @idea.id).each do |m| %>
+        <div class="milestone">
+           <h3><%= m.summary %></h3>
+           <em><%= m.due.strftime("To complete by %B %d, %Y at %I:%M %p") %></em>
+           <div class="percent_container"><div class="percent" style="min-width: <%= String(((Float(m.complete))/100.0 * 295).ceil) %>px"><span><%= m.complete %>% Complete</span></div></div>
+           <div class="actions" style="float: right;">
+             <% if current_user.id == @idea.user.id %>
+          
+              <%= link_to 'Edit', edit_milestone_path(m,@idea)  %>  |              
+              <%= link_to 'Delete', m, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete %> 
+    
+            <% end %>
+           </div>
+           <div class="clear"></div>
+        </div>        
+      <% end %>
+      <% if milestones.empty? %>
+        There are not yet any milestones for this idea.
+      <% end %>
+      
       <% if current_user.id == @idea.user.id %>
       	<%= link_to 'New Milestone', new_milestone_path(@idea) %>
       <% end %>
-      <div class="actions" style="float: right">
-        <% if current_user.id == @idea.user.id %>
-          
-          <%= link_to edit_idea_path(@idea) do  %> 
-            <img src='/images/ico_edit.png' />
-          <% end %>
-          
-          <%= link_to @idea, :confirm => 'Are you sure you want to delete? This cannot be undone!', :method => :delete do  %> 
-            <img src='/images/ico_delete.png' />
-          <% end %>
-
-        <% end %>
-      </div>
+      
     </div>
     
     <div id="idea_questions">
