@@ -47,7 +47,7 @@ module IdeasHelper
       # get the vars we need
       w = si.map.cellw
       h = si.map.cellh
-      dir = si.map.dir
+      dir = si.map.dir.upcase
       ico_type = si.map.ico_type
       
       # figure out the new addition buttons if it is type 1
@@ -63,9 +63,9 @@ module IdeasHelper
         
         # create the different addition buttons        
         case dir
-        when "e"
+        when "E"
           side = Integer(w) + 1
-        when "w"
+        when "W"
           side = Integer(w) - 1          
         end
         map[Integer(side)][Integer(h)] = '<a href="/subideas/new/2' + String(side) + String(h) + String(dir) + String(idea_id) + '/' + String(si.id) + '"><img src="/images/map_ico_Sadd' + String(dir) + '.png" title="New Small Idea" /></a>'
