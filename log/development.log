@@ -39286,3 +39286,173 @@ Started GET "/subideas/39" for 127.0.0.1 at 2011-01-13 02:32:49 -0600
   [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
 Rendered subideas/show.html.erb within layouts/application (473.0ms)
 Completed 200 OK in 528ms (Views: 495.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/subideas/39" for 127.0.0.1 at 2011-01-13 02:36:31 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 39) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 39) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/show.html.erb within layouts/application (305.0ms)
+Completed 200 OK in 360ms (Views: 324.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/subideas/39" for 127.0.0.1 at 2011-01-13 02:36:33 -0600
+  Processing by SubideasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UapdMdRAty5N2BseHS1g6hQK9bTQl/jJXzyOS5nVvOk=", "id"=>"39"}
+  [1m[36mSubidea Load (0.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 39) LIMIT 1[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 39) LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mDELETE FROM "maps" WHERE ("maps"."id" = 39)[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."parent_id" = 39)
+  [1m[36mAREL (1.0ms)[0m  [1mDELETE FROM "subideas" WHERE ("subideas"."id" = 39)[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+Redirected to http://localhost:3000/ideas/21
+Completed 302 Found in 284ms
+
+
+Started GET "/ideas/21" for 127.0.0.1 at 2011-01-13 02:36:33 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mView Load (2.0ms)[0m  [1mSELECT "views".* FROM "views" WHERE ("views"."user_id" = 4) AND ("views"."idea_id" = 21) ORDER BY views.id DESC LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mMilestone Load (1.0ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE ("milestones"."idea_id" = 21)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 1) AND ("ratings"."idea_id" = 21)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 2) AND ("ratings"."idea_id" = 21)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "favorites" WHERE ("favorites".idea_id = 21)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "views" WHERE ("views".idea_id = 21)[0m
+  [1m[35mQuestion Load (0.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 21)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (415.0ms)
+Completed 200 OK in 632ms (Views: 441.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/subideas/new/143e21" for 127.0.0.1 at 2011-01-13 02:36:35 -0600
+  Processing by SubideasController#new as HTML
+  Parameters: {"extra"=>"143e21"}
+  [1m[35mIdea Load (2.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendered subideas/_form.html.erb (18.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/new.html.erb within layouts/application (200.0ms)
+Completed 200 OK in 352ms (Views: 227.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/subideas" for 127.0.0.1 at 2011-01-13 02:36:37 -0600
+  Processing by SubideasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UapdMdRAty5N2BseHS1g6hQK9bTQl/jJXzyOS5nVvOk=", "subidea"=>{"title"=>"test", "summary"=>"test", "idea_id"=>"21", "parent_id"=>""}, "ico_type"=>"1", "cellw"=>"4", "cellh"=>"3", "dir"=>"e", "extra"=>"143e21", "commit"=>"Create Subidea"}
+  [1m[36mAREL (4.0ms)[0m  [1mINSERT INTO "subideas" ("title", "summary", "idea_id", "created_at", "updated_at", "parent_id") VALUES ('test', 'test', 21, '2011-01-13 08:36:38.001350', '2011-01-13 08:36:38.001350', NULL)[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "maps" ("cellw", "cellh", "dir", "ico_type", "subidea_id", "created_at", "updated_at") VALUES ('4', '3', 'e', 1, 40, '2011-01-13 08:36:38.225350', '2011-01-13 08:36:38.225350')
+Redirected to http://localhost:3000/subideas/40
+Completed 302 Found in 413ms
+
+
+Started GET "/subideas/40" for 127.0.0.1 at 2011-01-13 02:36:38 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 40) LIMIT 1[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 40) LIMIT 1[0m
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/show.html.erb within layouts/application (412.0ms)
+Completed 200 OK in 471ms (Views: 431.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/subideas/40" for 127.0.0.1 at 2011-01-13 02:38:11 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 40) LIMIT 1[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 40) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/show.html.erb within layouts/application (315.0ms)
+Completed 200 OK in 371ms (Views: 337.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/subideas/40" for 127.0.0.1 at 2011-01-13 02:38:15 -0600
+  Processing by SubideasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UapdMdRAty5N2BseHS1g6hQK9bTQl/jJXzyOS5nVvOk=", "id"=>"40"}
+  [1m[36mSubidea Load (2.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 40) LIMIT 1[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 40) LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mDELETE FROM "maps" WHERE ("maps"."id" = 40)[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."parent_id" = 40)
+  [1m[36mAREL (2.0ms)[0m  [1mDELETE FROM "subideas" WHERE ("subideas"."id" = 40)[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+Redirected to http://localhost:3000/ideas/21
+Completed 302 Found in 286ms
+
+
+Started GET "/ideas/21" for 127.0.0.1 at 2011-01-13 02:38:15 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mView Load (1.0ms)[0m  [1mSELECT "views".* FROM "views" WHERE ("views"."user_id" = 4) AND ("views"."idea_id" = 21) ORDER BY views.id DESC LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mMilestone Load (0.0ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE ("milestones"."idea_id" = 21)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 1) AND ("ratings"."idea_id" = 21)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 2) AND ("ratings"."idea_id" = 21)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "favorites" WHERE ("favorites".idea_id = 21)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "views" WHERE ("views".idea_id = 21)[0m
+  [1m[35mQuestion Load (0.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 21)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered ideas/show.html.erb within layouts/application (416.0ms)
+Completed 200 OK in 697ms (Views: 481.0ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/subideas/new/143e21" for 127.0.0.1 at 2011-01-13 02:38:17 -0600
+  Processing by SubideasController#new as HTML
+  Parameters: {"extra"=>"143e21"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendered subideas/_form.html.erb (18.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/new.html.erb within layouts/application (163.0ms)
+Completed 200 OK in 272ms (Views: 183.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/subideas" for 127.0.0.1 at 2011-01-13 02:38:19 -0600
+  Processing by SubideasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UapdMdRAty5N2BseHS1g6hQK9bTQl/jJXzyOS5nVvOk=", "subidea"=>{"title"=>"test", "summary"=>"test", "idea_id"=>"21", "parent_id"=>""}, "ico_type"=>"1", "cellw"=>"4", "cellh"=>"3", "dir"=>"e", "extra"=>"143e21", "commit"=>"Create Subidea"}
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "subideas" ("title", "summary", "idea_id", "created_at", "updated_at", "parent_id") VALUES ('test', 'test', 21, '2011-01-13 08:38:20.046550', '2011-01-13 08:38:20.046550', NULL)[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "maps" ("cellw", "cellh", "dir", "ico_type", "subidea_id", "created_at", "updated_at") VALUES ('4', '3', 'e', 1, 41, '2011-01-13 08:38:20.120550', '2011-01-13 08:38:20.120550')
+Redirected to http://localhost:3000/subideas/41
+Completed 302 Found in 189ms
+
+
+Started GET "/subideas/41" for 127.0.0.1 at 2011-01-13 02:38:20 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 41) LIMIT 1[0m
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 41) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/show.html.erb within layouts/application (343.0ms)
+Completed 200 OK in 396ms (Views: 361.0ms | ActiveRecord: 10.0ms)

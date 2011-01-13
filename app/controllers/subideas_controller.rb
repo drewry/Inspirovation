@@ -28,12 +28,15 @@ class SubideasController < ApplicationController
 
     # parse the extra data
     p = params[:extra]
+            
     @idea_id = p[4,255]
     @ico_type = p[0]
     @cellw = p[1]
     @cellh = p[2]
     @dir = p[3]
     @p = p
+    
+    puts "debugging --" + p + " idea_id: " + @idea_id + " ico_type: " + @ico_type + " cellw: " + @cellw + " cellh " + @cellh + " dir: " + @dir + " p: " + @p
     
     @idea = Idea.find(@idea_id)
     
