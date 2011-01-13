@@ -38882,3 +38882,17 @@ Started GET "/ideas/18" for 75.143.86.236 at 2011-01-13 00:29:08 -0600
   [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
 Rendered ideas/show.html.erb within layouts/application (581.0ms)
 Completed 200 OK in 784ms (Views: 601.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-13 01:48:10 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered home/index.html.erb within layouts/application (334.0ms)
+Completed 200 OK in 358ms (Views: 356.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-13 01:49:23 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered home/index.html.erb within layouts/application (113.0ms)
+Completed 200 OK in 168ms (Views: 137.0ms | ActiveRecord: 0.0ms)
