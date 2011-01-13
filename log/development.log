@@ -38840,3 +38840,45 @@ Rendered ideas/_form.html.erb (13.0ms)
   [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered ideas/new.html.erb within layouts/application (136.0ms)
 Completed 200 OK in 243ms (Views: 158.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-13 00:28:09 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 266ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-13 00:28:14 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 267ms (Views: 149.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ideas/18" for 75.143.86.236 at 2011-01-13 00:29:08 -0600
+  Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 18) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mView Load (0.0ms)[0m  SELECT "views".* FROM "views" WHERE ("views"."user_id" = 1) AND ("views"."idea_id" = 18) ORDER BY views.id DESC LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 18)[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 32) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mMilestone Load (0.0ms)[0m  SELECT "milestones".* FROM "milestones" WHERE ("milestones"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 1) AND ("ratings"."idea_id" = 18)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ratings" WHERE ("ratings"."rating_type" = 2) AND ("ratings"."idea_id" = 18)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorites" WHERE ("favorites".idea_id = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "views" WHERE ("views".idea_id = 18)
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions"."idea_id" = 18)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered ideas/show.html.erb within layouts/application (581.0ms)
+Completed 200 OK in 784ms (Views: 601.0ms | ActiveRecord: 6.0ms)
