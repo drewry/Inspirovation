@@ -31,9 +31,9 @@ class SubideasController < ApplicationController
             
     @idea_id = p[4,255]
     @ico_type = p[0,1]
-    @cellw = p[1,2]
-    @cellh = p[2,3]
-    @dir = p[3,4]
+    @cellw = p[1,1]
+    @cellh = p[2,1]
+    @dir = p[3,1]
     @p = p
     
     @idea = Idea.find(@idea_id)
