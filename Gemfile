@@ -10,6 +10,10 @@ group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'devise', '1.1.5'
 
 # Use unicorn as the web server

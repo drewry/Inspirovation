@@ -38774,3 +38774,69 @@ Started GET "/ideas/18" for 75.143.86.236 at 2011-01-12 23:25:40 -0600
   [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
 Rendered ideas/show.html.erb within layouts/application (397.0ms)
 Completed 200 OK in 806ms (Views: 419.0ms | ActiveRecord: 66.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-12 23:45:25 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 291ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-12 23:45:29 -0600
+  Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered ideas/index.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 247ms (Views: 176.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/edit" for 75.143.86.236 at 2011-01-12 23:45:34 -0600
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered devise/registrations/edit.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 304ms (Views: 150.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 75.143.86.236 at 2011-01-12 23:45:36 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://inspirovation.co.cc/ideas
+Completed 302 Found in 171ms
+
+
+Started GET "/ideas" for 75.143.86.236 at 2011-01-12 23:45:37 -0600
+  Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (1.0ms)[0m  SELECT "ideas".* FROM "ideas"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/index.html.erb within layouts/application (141.0ms)
+Completed 200 OK in 246ms (Views: 162.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/home/coming_soon" for 75.143.86.236 at 2011-01-12 23:45:38 -0600
+  Processing by HomeController#coming_soon as HTML
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered home/coming_soon.html.erb within layouts/application (225.0ms)
+Completed 200 OK in 251ms (Views: 250.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ideas/new" for 75.143.86.236 at 2011-01-12 23:45:39 -0600
+  Processing by IdeasController#new as HTML
+Rendered ideas/_form.html.erb (13.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered ideas/new.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 243ms (Views: 158.0ms | ActiveRecord: 2.0ms)
