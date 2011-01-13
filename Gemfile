@@ -8,7 +8,8 @@ gem 'rails', '3.0.3'
 
 gem "sqlite3-ruby", :group => :development
 
-gem 'devise', '1.1.5'
+gem 'bcrypt-ruby'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
