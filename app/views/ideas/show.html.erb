@@ -50,7 +50,7 @@
       <% end %>
       
       <% if current_user.id == @idea.user.id %>
-      	<%= link_to 'New Milestone', new_milestone_path(@idea) %>
+      	<div><%= link_to 'New Milestone', new_milestone_path(@idea) %></div>
       <% end %>
       
     </div>
