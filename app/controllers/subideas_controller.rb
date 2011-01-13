@@ -36,6 +36,8 @@ class SubideasController < ApplicationController
     
     @idea = Idea.find(@idea_id)
     
+    @parent_id = params[:parent_id]
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @subidea }
@@ -46,6 +48,7 @@ class SubideasController < ApplicationController
   def edit
     @subidea = Subidea.find(params[:id])
     @idea = @subidea.idea
+    @parent_id = @subidea.parent_id
   end
 
   # POST /subideas

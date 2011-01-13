@@ -21,7 +21,7 @@
       <%= f.text_area :summary, :id => "idea_summary" %>
     </div>
     <%= f.hidden_field :idea_id, :value => @idea.id %>
-    <%= f.hidden_field :parent_id, :value => params[:parent_id] %>
+    <%= f.hidden_field :parent_id, :value => @parent_id %>
     <input type="hidden" name="ico_type" value="<%= @ico_type %>" />
     <input type="hidden" name="cellw" value="<%= @cellw %>" />
     <input type="hidden" name="cellh" value="<%= @cellh %>" />
