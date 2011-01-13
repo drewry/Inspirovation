@@ -28,11 +28,12 @@ class SubideasController < ApplicationController
 
     # parse the extra data
     @p = params[:extra]
-    @idea_id = @p[4,255]
-    @ico_type = @p[0]
-    @cellw = @p[1]
-    @cellh = @p[2]
-    @dir = @p[3]
+    parse = String(@p)
+    @idea_id = parse[4,255]
+    @ico_type = parse[0]
+    @cellw = parse[1]
+    @cellh = parse[2]
+    @dir = parse[3]
     
     @idea = Idea.find(@idea_id)
     
