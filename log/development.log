@@ -39456,3 +39456,61 @@ Started GET "/subideas/41" for 127.0.0.1 at 2011-01-13 02:38:20 -0600
   [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "ideas"
 Rendered subideas/show.html.erb within layouts/application (343.0ms)
 Completed 200 OK in 396ms (Views: 361.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/subideas/41" for 127.0.0.1 at 2011-01-13 02:41:03 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 41) LIMIT 1[0m
+  [1m[35mIdea Load (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mSubidea Load (1.0ms)[0m  [1mSELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)[0m
+  [1m[35mMap Load (1.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 41) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "ideas"
+Rendered subideas/show.html.erb within layouts/application (244.0ms)
+Completed 200 OK in 299ms (Views: 266.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/subideas/new/242n21/41" for 127.0.0.1 at 2011-01-13 02:41:04 -0600
+  Processing by SubideasController#new as HTML
+  Parameters: {"extra"=>"242n21", "parent_id"=>"41"}
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+Rendered subideas/_form.html.erb (17.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered subideas/new.html.erb within layouts/application (157.0ms)
+Completed 200 OK in 308ms (Views: 185.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/subideas/41" for 127.0.0.1 at 2011-01-13 02:41:06 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 41) LIMIT 1
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)
+  [1m[36mMap Load (0.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 41) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered subideas/show.html.erb within layouts/application (272.0ms)
+Completed 200 OK in 329ms (Views: 294.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/subideas/41" for 127.0.0.1 at 2011-01-13 02:41:27 -0600
+  Processing by SubideasController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."id" = 41) LIMIT 1
+  [1m[36mIdea Load (1.0ms)[0m  [1mSELECT "ideas".* FROM "ideas" WHERE ("ideas"."id" = 21) LIMIT 1[0m
+  [1m[35mSubidea Load (1.0ms)[0m  SELECT "subideas".* FROM "subideas" WHERE ("subideas"."idea_id" = 21)
+  [1m[36mMap Load (1.0ms)[0m  [1mSELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 37) LIMIT 1[0m
+  [1m[35mMap Load (0.0ms)[0m  SELECT "maps".* FROM "maps" WHERE ("maps".subidea_id = 41) LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "ideas"[0m
+Rendered subideas/show.html.erb within layouts/application (271.0ms)
+Completed 200 OK in 390ms (Views: 291.0ms | ActiveRecord: 6.0ms)
