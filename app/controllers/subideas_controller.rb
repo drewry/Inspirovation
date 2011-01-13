@@ -25,6 +25,16 @@ class SubideasController < ApplicationController
   # GET /subideas/new.xml
   def new
     @subidea = Subidea.new
+
+    # parse the extra data
+    @p = params[:extra]
+    @idea_id = @p[4,255]
+    @ico_type = @p[0]
+    @cellw = @p[1]
+    @cellh = @p[2]
+    @dir = @p[3]
+    
+    @idea = Idea.find(@idea_id)
     
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +45,7 @@ class SubideasController < ApplicationController
   # GET /subideas/1/edit
   def edit
     @subidea = Subidea.find(params[:id])
+    @idea = @subidea.idea
   end
 
   # POST /subideas

@@ -8,9 +8,8 @@
     </div>   
     <div id="idea_info"> 
       <h1><%= link_to @subidea.idea.title, @subidea.idea %></h1>
-      <h2><%= @subidea.title %></h2>
-      <p><%= @subidea.summary %></p>
-      <div class="actions" style="float: right">
+      
+      <div class="actions" style="float: right; position: relative; top: -15px;">
         <% if current_user.id == @subidea.idea.user.id %>
           
           <%= link_to edit_subidea_path(@subidea) do  %> 
@@ -22,7 +21,12 @@
           <% end %>
           
         <% end %>
-      </div>
+      </div>      
+      
+      <h2><%= @subidea.title %></h2>
+      
+      <p><%= @subidea.summary %></p>
+      
     </div>
   
     <div class="clear"></div>

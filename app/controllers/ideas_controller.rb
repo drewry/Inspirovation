@@ -54,6 +54,9 @@ class IdeasController < ApplicationController
   # GET /ideas/new.xml
   def new
     @idea = Idea.new
+    @title = 'My First Idea'
+    @statement = 'My idea is useful because it is a new way to...'
+    @summary = 'It is actually rather simple how my idea works, you see you just...'
 
     respond_to do |format|
       format.html # new.html.erb
@@ -64,6 +67,9 @@ class IdeasController < ApplicationController
   # GET /ideas/1/edit
   def edit
     @idea = Idea.find(params[:id])
+    @title = @idea.title
+    @statement = @idea.statement
+    @summary = @idea.summary
   end
 
   # POST /ideas
